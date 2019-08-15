@@ -33,9 +33,5 @@ class CreateProfilesTable extends Migration
     {
         Schema::dropIfExists('profiles');
     }
-
-    public function experience()
-    {
-         
-    }
+    
 }
