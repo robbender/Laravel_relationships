@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfilesTable extends Migration
+class CreateExperiencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('experiences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->string('email');
-            $table->string('website_url');
-            $table->string('github_url');
-            $table->string('linkedin_url');
+            $table->bigIncrements('user_id');
+            $table->unsignedInteger('points');
             $table->timestamps();
         });
     }
@@ -31,11 +28,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
-    }
-
-    public function experience()
-    {
-         
+        Schema::dropIfExists('experiences');
     }
 }
